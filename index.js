@@ -65,9 +65,14 @@ wordCounter(longText);
 let etWord = 0;
 
 for (let i = 0; i < longText.length; i++) {
-    if (longText[i] === "e" && longText[i+2] === "t ") {
-        etWord ++
-    }
+  if (
+    longText[i - 1] === ' ' &&
+    longText[i] === 'e' &&
+    longText[i + 1] === 't' &&
+    (longText[i + 2] === ' ' || longText[i + 2] === ',')
+  ) {
+    etWord++;
+  }
 }
 
 console.log(etWord);
